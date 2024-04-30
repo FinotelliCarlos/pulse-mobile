@@ -9,7 +9,7 @@ export default function HomeHeader() {
 
       <TouchableOpacity
         activeOpacity={0.7}
-        className="rounded-full border-2 border-solid border-slate-400 bg-slate-300 p-2">
+        className="rounded-full border-2 border-solid border-primary bg-slate-300 p-2">
         <AntDesign name="user" size={24} color="black" />
       </TouchableOpacity>
     </View>
