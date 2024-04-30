@@ -8,13 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        violet: {
+          300: '#7253E3',
+        },
         border: withOpacity('border'),
         input: withOpacity('input'),
         ring: withOpacity('ring'),
         background: withOpacity('background'),
         foreground: withOpacity('foreground'),
         primary: {
-          DEFAULT: withOpacity('primary'),
+          DEFAULT: '#7253E3',
           foreground: withOpacity('primary-foreground'),
         },
         secondary: {
