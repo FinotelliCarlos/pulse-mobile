@@ -13,7 +13,9 @@ export default function ReelItem({ reel }: { reel: ReelProps }) {
           uri: reel.avatar,
         }}
       />
-      <Text className="w-full max-w-[80px] truncate text-center text-slate-200">{userName}</Text>
+      <Text className="w-full max-w-[80px] truncate text-center italic text-slate-200">
+        {userName}
+      </Text>
     </TouchableOpacity>
   );
 }
