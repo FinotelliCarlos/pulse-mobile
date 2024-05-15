@@ -1,17 +1,18 @@
-import React from 'react';
-import { FlatList } from 'react-native';
-import { POSTS_DATA } from '~/lib/fake-datas/posts';
-import Post from './components/post';
+import { ActivityIndicator, FlatList } from 'react-native';
 
-export default function PostsList() {
+import { Post } from './components/post';
+
+import colors from 'tailwindcss/colors';
+import { POSTS_DATA } from '~/lib/fake-datas/posts';
+
+export function PostsList() {
   return (
     <FlatList
       data={POSTS_DATA}
       keyExtractor={(item) => item.id}
+      contentContainerStyle={{ paddingBottom: 20 }}
       renderItem={({ item }) => <Post post={item} />}
-      contentContainerStyle={{ gap: 12, paddingVertical: 20 }}
-      showsVerticalScrollIndicator={false}
-      className="h-auto"
+      ListFooterComponent={<ActivityIndicator color={colors.violet[300]} />}
     />
   );
 }

@@ -1,11 +1,10 @@
-import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { Icons } from '~/components/icon.ionicons';
 import { PostProps } from '~/lib/fake-datas/posts';
 
-export default function Post({ post }: { post: PostProps }) {
+export function Post({ post }: { post: PostProps }) {
   return (
-    <View className="gap-2 border-b border-slate-600 p-5 pb-2">
+    <View className="pb-2">
       <Image
         className="h-80 rounded-md"
         source={{
@@ -35,15 +34,13 @@ export default function Post({ post }: { post: PostProps }) {
           <Text className="font-semibold italic text-slate-200">{post.comments.length ?? 0}</Text>
         </TouchableOpacity>
       </View>
-
-      {post.comments.length >= 1 &&
-        post.comments.map((comment) => {
-          return (
-            <View key={comment} className="rounded-md bg-slate-500 p-2">
-              <Text>{comment}</Text>
-            </View>
-          );
-        })}
+      <View className=" px-2">
+        {post.comments.length > 0 && (
+          <View className="rounded-md bg-slate-500 p-2">
+            <Text>{post.comments[0]}</Text>
+          </View>
+        )}
+      </View>
     </View>
   );
 }
